@@ -5,19 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>página 01</title>
 </head>
-<body> 
+<body>
     <table id="demo"></table>
 
     <script>
-        function loadXMLDoc() {
-          const xhttp = new XMLHttpRequest();
+        loadTXTDoc()
+
+        function loadTXTDoc() {
+            console.log("Incializando lectura")
+          //const xhttp = new XMLHttpRequest();
+            console.log(xhttp)
           xhttp.onload = function() {
-            const xmlDoc = xhttp.responseXML;
-            const cd = xmlDoc.getElementsByTagName("CD");
-            myFunction(cd);
+            //const xmlDoc = xhttp.responseXML;
+                console.log(xmlDoc)
+            //const cd = xmlDoc.getElementsByTagName("CD");
+                console.log(cd)
+           myFunction(cd);
+           console.log(xhttp)
           }
-          xhttp.open("GET", "cd_catalog.xml");
+          xhttp.open("GET", "Personas.txt");
           xhttp.send();
+            console.log("Saliendo de lectura")
         }
         
         function myFunction(cd) {

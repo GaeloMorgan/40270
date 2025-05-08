@@ -1,0 +1,16 @@
+const Picture = (id) => {
+    return `<figure onclick="mensaje(${id})">
+    <img src="https://picsum.photos/id/${id}/200/200" alt="" class="redonda">
+    <figcaption>John</figcaption>
+    </figure>`
+}
+
+const p = document.getElementById("app")
+p.innerHTML= Picture(1) + Picture(2) + Picture(3)
+
+const mensaje = (id) => {alert('hola' + id)}
+
+const lista = app.querySelectorAll('img')
+console.log(lista)
+
+for (let i = 0; i < lista.length; i++);

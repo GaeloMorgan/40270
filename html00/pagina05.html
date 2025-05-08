@@ -18,18 +18,45 @@
     </style>
 </head>
 <body>
-    <figure>
     <h1>Random Picture</h1>
-    <img src="https://picsum.photos/id/1/200/200" alt="">
-    <figcaption>photos</figcaption>
-    </figure>
-    <figure>
-        <h1>Random Picture</h1>
-        <img src="https://picsum.photos/id/1/200/200" alt="">
+    <div id="app">
+    <!---- <figure>
+         <img src="https://picsum.photos/id/1/200/200" alt="">
         <figcaption>photos</figcaption>
-        </figure>
-</body>
-</html>
-    
+    </figure>-->
+    </div>
+
+    <script>
+    console.log("Imprime mensaje a la consola")
+    const x = document.getElementById("app")
+    console.log(x)
+
+   // x.innerHTML = xy(1) + xy(2) + xy(3)
+        // for (let i = 1; i < 10; i++){
+        //     x.innerHTML = x.innerHTML + xy(i)
+        // }
+
+        function imagen (id) {
+            const c = '<figure>' +
+        '<img src="https://picsum.photos/id/'+id+'/200/200" alt="">' + 
+        '<figcaption>photos</figcaption>' + 
+        '<figure>'
+        return c
+        }
+
+        //funcion anonima asiganada a la constante Picture
+        //const Picture = function () { return "hola"};
+        
+        //funcion anonima de tipo arrow function asignada la constante Picture
+        const Picture = (id) => {
+        return`<figure> 
+        <img src="https://picsum.photos/id/${id}/200/200" alt="John Marston">  
+        <figcaption>john Marston </figcaption> 
+        <figure>`
+        };
+
+        //Cuidar que picture ya este inicializada
+        x.innerHTML = Picture(1) + Picture(2) + Picture(3)
+    </script>
 </body>
 </html>
