@@ -1,0 +1,106 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor de pantalla dividida */
+.split-screen {
+  display: flex;
+  height: 100vh;
+}
+
+/* Lado izquierdo con imagen */
+.left-side {
+  flex: 1;
+  background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Lado derecho con el formulario */
+.right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #151414, #952626);
+  padding: 40px;
+}
+
+/* Formulario de login */
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  background-color: #f8f8f8;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+
+.login-header h1 {
+  font-size: 2.5em;
+  color: #05ef0d;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 0 5px rgba(5, 239, 13, 0.4);
+  font-family: Arial, sans-serif;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.login-form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.login-form button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #05ef0d;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #53c559;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.app-title {
+  font-size: 2.5em;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(5, 239, 13, 0.6);
+  margin-bottom: 30px;
+  font-family: Arial, sans-serif;
+}
+

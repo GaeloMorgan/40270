@@ -1,0 +1,156 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+/* Encabezado superior */
+.top-bar {
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.top-bar .logo img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #05ef0d;
+}
+
+/* Contenedor principal del reproductor */
+.player-container {
+  background-color: #2c2c2c;
+  border-radius: 15px;
+  padding: 30px;
+  width: 350px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imagen de portada */
+.player-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Título y artista */
+.song-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.artist-name {
+  font-size: 1em;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+/* Controles del reproductor */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.controls button {
+  background-color: #05ef0d;
+  border: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  font-size: 1em;
+}
+
+.controls button:hover {
+  background-color: #35c253;
+}
+
+/* Solo para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.volume-control {
+  margin-top: 20px;
+  width: 100%;
+  text-align: left;
+}
+
+.volume-control label {
+  font-size: 0.95em;
+  margin-bottom: 5px;
+  display: block;
+  color: #ccc;
+}
+
+.volume-control input[type="range"] {
+  width: 100%;
+  height: 6px;
+  appearance: none;
+  background: #444;
+  border-radius: 5px;
+  outline: none;
+  margin-top: 5px;
+  transition: background 0.3s;
+}
+
+.volume-control input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #05ef0d;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.volume-control input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #05ef0d;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}

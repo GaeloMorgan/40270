@@ -1,0 +1,172 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+  height: auto;
+  background: linear-gradient(to bottom, #151414, #952626);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+/* Barra superior */
+.top-bar {
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.top-bar .logo img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: #05ef0d;
+}
+
+/* Títulos */
+h1, h2 {
+  text-align: center;
+  font-weight: 700;
+  margin: 30px 0 20px;
+  color: #dae5da;
+  text-shadow: 0 0 5px rgba(33, 197, 39, 0.4);
+  letter-spacing: 1px;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* === ESTILOS ACCESIBLES PARA CANCIONES Y ÁLBUMES === */
+ul[role="list"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+  list-style: none;
+}
+
+ul[role="list"] li {
+  background: #222;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+ul[role="list"] li:hover {
+  transform: scale(1.05);
+}
+
+ul[role="list"] li article img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+ul[role="list"] li article h3 {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+  word-break: break-word;
+}
+
+ul[role="list"] li article p {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+ul[role="list"] li article button {
+  padding: 8px 12px;
+  background-color: #05ef0d;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+ul[role="list"] li article button:hover {
+  background-color: #53c559;
+}
+
+/* Sección Álbumes (si usas div.album-gallery sin lista) */
+.album-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  ul[role="list"] li {
+    width: 90%;
+  }
+
+  ul[role="list"] li article img {
+    width: 100%;
+    height: auto;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .album-gallery {
+    padding: 10px;
+  }
+}
+
+/* Footer */
+footer {
+  border-top: 2px solid #ccc;
+  margin-top: 40px;
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  background-color: #000;
+  width: 100%;
+  box-sizing: border-box;
+}
