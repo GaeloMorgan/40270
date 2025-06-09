@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Álbum ATP – NSQK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="funcionalidades.css" />
+  <style>
+    /* Estilos específicos para la página del álbum */
+    body {
+      background: linear-gradient(to bottom, #151414, #952626);
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-bottom: 40px;
+    }
+
+    main {
+      padding: 30px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #05ef0d;
+      text-shadow: 0 0 4px rgba(5,239,13,0.4);
+      margin: 30px 0 10px;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: normal;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 90%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: #222;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #444;
+    }
+
+    th {
+      background-color: #05ef0d;
+      color: #000;
+    }
+
+    caption {
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      color: #fff;
+      text-align: center;
+    }
+
+    tr:hover {
+      background-color: rgba(5, 239, 13, 0.2);
+    }
+
+    td:focus {
+      outline: 2px solid #05ef0d;
+      outline-offset: 2px;
+      background-color: rgba(5, 239, 13, 0.2);
+    }
+
+    /* Asegura que todas las celdas sean accesibles con Tab */
+    td {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <header class="top-bar">
+    <div class="logo">
+      <img src="https://tr.rbxcdn.com/180DAY-40197fc2363c5b3694a1598ee5caceac/420/420/Image/Png/noFilter" alt="Morgan Music" />
+    </div>
+    <nav class="nav-links">
+      <a href="pagina.html">Inicio</a>
+      <a href="#">Ayuda</a>
+      <a href="login.html">Salir</a>
+    </nav>
+  </header>
+
+  <main role="main">
+    <section aria-labelledby="titulo-album">
+      <h1 id="titulo-album">ATP</h1>
+      <h2>NSQK – 2024</h2>
+
+      <table id="tablaATP" aria-describedby="descripcion-tabla">
+        <caption id="descripcion-tabla">Listado de canciones del álbum ATP</caption>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Título</th>
+            <th scope="col">Duración</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Canciones cargadas desde XML -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+
+  <script>
+    fetch("atp.xml")
+      .then(response => response.text())
+      .then(data => {
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(data, "application/xml");
+        const canciones = xml.getElementsByTagName("track");
+        const tbody = document.querySelector("#tablaATP tbody");
+
+        for (let i = 0; i < canciones.length; i++) {
+          const numero = canciones[i].getElementsByTagName("number")[0].textContent;
+          const titulo = canciones[i].getElementsByTagName("title")[0].textContent;
+          const duracion = canciones[i].getElementsByTagName("duration")[0].textContent;
+
+          const fila = document.createElement("tr");
+          fila.innerHTML = `
+            <td tabindex="0">${numero}</td>
+            <td tabindex="0">${titulo}</td>
+            <td tabindex="0">${duracion}</td>
+          `;
+          tbody.appendChild(fila);
+        }
+      })
+      .catch(err => {
+        console.error("Error al cargar el XML:", err);
+      });
+  </script>
+
+</body>
+</html>
