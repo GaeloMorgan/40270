@@ -1,0 +1,69 @@
+loadXMLDoc()
+    // loadTXTDoc()
+
+function loadXMLDoc() {
+    console.log("iniciando lectura")
+    const xhttp = new XMLHttpRequest();
+    console.log(xhttp)
+    xhttp.onload = function () {
+    const xmlDoc = xhttp.responseXML;
+    console.log(xmlDoc)
+    const cd = xmlDoc.getElementsByTagName("CD");
+    console.log(cd)
+    myFunction(cd);
+    console.log(xhttp)
+    }
+    xhttp.open("GET", "cd_catalog.xml");
+    xhttp.send();
+    console.log("saliendo de lectura")
+}
+
+function loadTXTDoc() {
+    console.log("iniciando lectura")
+    const xhttp = new XMLHttpRequest();
+    console.log(xhttp)
+    xhttp.onload = function () {
+    const xmlDoc = xhttp.responseText;
+    console.log(xmlDoc)
+    // const cd = xmlDoc.getElementsByTagName("CD");
+    // console.log(cd)
+    // myFunction(cd);
+    imprime(xmlDoc)
+    console.log(xhttp)
+    }
+    xhttp.open("GET", "personas.txt");
+    xhttp.send();
+    console.log("saliendo de lectura")
+}
+
+function myFunction(cd) {
+    let table = "<tr><th>Artist</th><th>Title</th></tr>";
+    for (let i = 0; i < cd.length; i++) {
+    table += "<tr><td>" +
+        cd[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        cd[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+        "</td></tr>";
+    }
+    document.getElementById("demo").innerHTML = table;
+}
+
+function imprime(array) {
+    let table = "<tr><th>Nombre</th><th>Apellido</th></tr>";
+    let persona = ""
+    for (let index = 0; index < array.length; index++) {
+    if (index == 0)
+        persona = "<tr><td>"
+    if (array[index] == "\n") {
+        persona += "</td></tr>"
+        table += persona
+        persona = "<tr><td>"
+    }
+    if (array[index] == " ") {
+        persona += "</td><td>"
+    }
+    persona += array[index]
+    }
+    document.getElementById("demo").innerHTML = table;
+}
+  

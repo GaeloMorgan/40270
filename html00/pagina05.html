@@ -3,60 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imagenes Remake</title>
-    <style>
+    <title>Document</title>
+    <STyle> 
         img {
-            box-shadow: 10px 20px 20px red;
+            box-shadow: 20px 20px 20px red;
         }
-        figure{
+        figure {
             display: inline-block;
             text-align: center;
         }
-        body{
-
+        div {
+           text-align: center; 
         }
-    </style>
+    </STyle>
 </head>
-<body>
-    <h1>Random Picture</h1>
+<body >
+    <!--h1{Random Pictures}(figure>img[src="https://picsum.photos/id/$/200/200"]+figcaption)*2 -->
+    <h1>Random picture</h1>
     <div id="app">
-    <!---- <figure>
-         <img src="https://picsum.photos/id/1/200/200" alt="">
-        <figcaption>photos</figcaption>
+   <!-- <figure>
+    <img src="https://picsum.photos/id/1/200/200/" alt="John">
+    <figcaption>John</figcaption> 
     </figure>-->
     </div>
 
-    <script>
-    console.log("Imprime mensaje a la consola")
-    const x = document.getElementById("app")
-    console.log(x)
-
-   // x.innerHTML = xy(1) + xy(2) + xy(3)
-        // for (let i = 1; i < 10; i++){
-        //     x.innerHTML = x.innerHTML + xy(i)
-        // }
-
-        function imagen (id) {
-            const c = '<figure>' +
-        '<img src="https://picsum.photos/id/'+id+'/200/200" alt="">' + 
-        '<figcaption>photos</figcaption>' + 
-        '<figure>'
-        return c
-        }
-
-        //funcion anonima asiganada a la constante Picture
-        //const Picture = function () { return "hola"};
+    <script type="module" src="pagina05.js">
         
-        //funcion anonima de tipo arrow function asignada la constante Picture
-        const Picture = (id) => {
-        return`<figure> 
-        <img src="https://picsum.photos/id/${id}/200/200" alt="John Marston">  
-        <figcaption>john Marston </figcaption> 
-        <figure>`
-        };
-
-        //Cuidar que picture ya este inicializada
-        x.innerHTML = Picture(1) + Picture(2) + Picture(3)
     </script>
 </body>
 </html>

@@ -5,40 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>svg00</title>
     <style>
-        svg{
-            background-color:yellowgreen;
+        /* Margen */
+        * {
+            margin: 4;
         }
-        alumno {
-            background-color: blue;
+        /* Color del fondo */
+        figure, alumno{
+            background-color:yellowgreen;
+            text-align: center;
+        }  
+        
+        figcaption{
+            color: white;
+        }
+        /* Selector de ID's # */
+        #tres, #uno{
+            color: green;
+        }
+        .koala2,.koala3{
+            background-color: aliceblue;
+        }
+        img{
+            width: 50px;
+            height: 50px;
+            background-color: black;
         }
     </style>
 </head>
 <body>
-    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-        <!-- cabeza -->
-        <circle cx="150" cy="150" r="80" stroke="gray" 
-        stroke-width="4" fill="gray"></circle>
-        <!-- oreja izquierda -->
-        <circle cx="55" cy="70" r="45" stroke="black" 
-        stroke-width="4" fill="gray"></circle>
-        <!-- oreja derecha -->
-        <circle cx="240" cy="70" r="45" stroke="black" 
-        stroke-width="4" fill="gray"></circle>
-        <!-- nariz -->
-        <circle cx="150" cy="170" r="20" stroke="black" 
-        stroke-width="4" fill="black"></circle>
-        <!-- parpado izquierdo -->
-        <circle cx="120" cy="140" r="30" stroke="white" 
-        stroke-width="4" fill="white"></circle>
-        <!-- parpado derecho -->
-        <circle cx="190" cy="140" r="30" stroke="white" 
-        stroke-width="4" fill="white"></circle>
-        <!-- Ojo -->
-        <circle cx="130" cy="140" r="20" stroke="white" 
-        stroke-width="4" fill="black"></circle>
-        <!-- ojo Izquierdo -->
-        <circle cx="200" cy="140" r="20" stroke="white" 
-        stroke-width="4" fill="black"></circle>
+    <figure>
+        <img src="circulo.svg" alt="" class="koala1">
+        <figcaption id="uno">Fig1 koala kong1 </figcaption>
+    </figure>
+    <figure>
+        <img src="circulo.svg" alt="" class="koala2">
+        <figcaption id="dos">Fig2 koala kong2 </figcaption>
+    </figure>
+    <figure>
+        <img src="circulo.svg" alt="" class="koala3">
+        <figcaption id="tres">Fig3 koala kong3 </figcaption>
+    </figure>
     </svg>
     <alumno>
         Gaelo

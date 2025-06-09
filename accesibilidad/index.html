@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesibilidad</title>
+</head>
+<body>
+    <button aria-label="cerrar ventana">X</button>
+    <button aria-label="No lo presiones o repruebas">Emoji de calavera</button>
+    <label for="usuario">Nombre de usuario: </label>
+    <input type="text" id="usuario" aria-describedby="instrucciones">
+    <p id="instrucciones">el nombre de usuario debe tener 6 caracteres alfanumericos</p>
+    <button aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" hidden>
+        <ul>
+            <li><a href="#">inicio</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Servicios</a></li> <!-- li son los componentes de la lista-->
+        </ul>  <!-- Lista de elementos no ordenada-->
+    </nav>
+
+    <div role="tablist">
+        <h1>Seccion uno</h1> <!--La tecla TAB va uno por uno y la tecla h te permite ir de seccion en seccion "creo" -->
+
+        <button id="tab1" role="tab" aria-selected="true" aria-controls="pes1">Pestaña 1</button>
+        <button id="tab2" role="tab" aria-selected="false" aria-controls="pes2">Pestaña 2</button>
+    </div>
+    <div id="pes1" role="tabpanel" aria-labelledby="tab1">
+        <fieldset>
+            <h2>Datos personales</h2>
+            Contenido de la Pestaña 1
+        </fieldset>
+    </div>
+    <div id="pes2" role="tabpanel" hidden aria-labelledby="tab2">
+        <fieldset >Contenido de la Pestaña 2</fieldset>
+    </div>
+
+ <!-- SCRIPTS -->
+    <script>
+        const menu = document.getElementsByTagName("button") [2]
+        const menuBoton = document.querySelector("[aria-expanded]")
+        //console.log(menuBoton)
+        const ligas = document.getElementById("nav")
+        //console.log(menuBoton)
+        menu.addEventListener("click", () => {
+            if(menu.getAttribute("aria-expanded") == "false"){
+            menu.setAttribute("aria-expanded", "true")
+            ligas.removeAttribute("hidden")
+            console.log(ligas.getAttribute["hidden"])
+            }
+            else{
+                ligas.setAttribute("hidden", "")
+                menu.setAttribute("aria-expanded", "false")
+            }
+        })
+
+        const pes1 = document.getElementById("tab1")
+        const pes2 = document.getElementById("tab2")
+        pes1.addEventListener("click", () => {
+            let divs = document.querySelectorAll('[role="tabpanel"]')
+            console.log(divs)
+            for (let i = 0; i < divs.length; i++){
+                console.log(divs[i])
+                divs[i].setAttribute("hidden", "")
+            }
+        })
+
+            </script>
+</body>
+</html>

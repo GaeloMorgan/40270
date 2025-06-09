@@ -1,0 +1,26 @@
+ <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+        <!-- cabeza -->
+        <circle cx="150" cy="150" r="80" stroke="gray" 
+        stroke-width="4" fill="gray"></circle>
+        <!-- oreja izquierda -->
+        <circle cx="55" cy="70" r="45" stroke="black" 
+        stroke-width="4" fill="gray"></circle>
+        <!-- oreja derecha -->
+        <circle cx="240" cy="70" r="45" stroke="black" 
+        stroke-width="4" fill="gray"></circle>
+        <!-- nariz -->
+        <circle cx="150" cy="170" r="20" stroke="black" 
+        stroke-width="4" fill="black"></circle>
+        <!-- parpado izquierdo -->
+        <circle cx="120" cy="140" r="30" stroke="white" 
+        stroke-width="4" fill="white"></circle>
+        <!-- parpado derecho -->
+        <circle cx="190" cy="140" r="30" stroke="white" 
+        stroke-width="4" fill="white"></circle>
+        <!-- Ojo -->
+        <circle cx="130" cy="140" r="20" stroke="white" 
+        stroke-width="4" fill="black"></circle>
+        <!-- ojo Izquierdo -->
+        <circle cx="200" cy="140" r="20" stroke="white" 
+        stroke-width="4" fill="black"></circle>
+    </svg>

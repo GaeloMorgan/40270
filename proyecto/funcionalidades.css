@@ -170,3 +170,14 @@ footer {
   width: 100%;
   box-sizing: border-box;
 }
+
+/* Permitir navegar por la tabla con Tab y ver el foco */
+#tablaATP td {
+  outline: none;
+}
+
+#tablaATP td:focus {
+  outline: 2px solid #05ef0d;
+  outline-offset: 2px;
+  background-color: rgba(5, 239, 13, 0.2);
+}
